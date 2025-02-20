@@ -14,9 +14,9 @@ services:
       retries: 20
     volumes:
       - /home/ai/code/pytldr-oss/dse/7.0.0-alpha.4:/var/lib/cassandra
-    networks:
-      backend:
-        ipv4_address: 10.1.0.2
+    #networks:
+      #backend:
+        #ipv4_address: 10.1.0.2
 
   search_db:
     #image: cr.dtsx.io/datastax/dse-server:6.8.37
@@ -33,9 +33,9 @@ services:
       retries: 20
     volumes:
       - /home/ai/code/pytldr-oss/dse/6.8.37:/var/lib/cassandra
-    networks:
-      backend:
-        ipv4_address: 10.1.0.3
+    #networks:
+      #backend:
+        #ipv4_address: 10.1.0.3
 
   server:
     build:
@@ -60,19 +60,19 @@ services:
       - /home/ai/.cache/huggingface:/root/.cache/huggingface
     ports:
       - 7860:7860
-    networks:
-      backend:
-        ipv4_address: 10.1.0.4
+    #networks:
+      #backend:
+        #ipv4_address: 10.1.0.4
     depends_on:
       vector_db:
         condition: service_healthy
       search_db:
         condition: service_healthy
 
-networks:
-  backend:
-    driver: bridge
-    ipam:
-      config:
-        - subnet: 10.1.0.0/16
-          gateway: 10.1.0.1
+#networks:
+  #backend:
+    #driver: bridge
+    #ipam:
+      #config:
+        #- subnet: 10.1.0.0/16
+         # gateway: 10.1.0.1
