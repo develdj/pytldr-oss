@@ -34,8 +34,12 @@ services:
     networks:
       backend:
         ipv4_address: 10.1.0.3
-
+    
   server:
+    build:
+    context: .
+    dockerfile: 
+    platform: linux/arm64 
     image: pytldr
     deploy:
       resources:
