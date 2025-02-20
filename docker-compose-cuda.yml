@@ -12,7 +12,7 @@ services:
       retries: 20
     volumes:
     # Update this to match your local paths
-      - /home/your_username/code/pytldr-oss/dse/7.0.0-alpha.4:/var/lib/cassandra
+      - /home/ai/code/pytldr-oss/dse/7.0.0-alpha.4:/var/lib/cassandra
     networks:
       backend:
         ipv4_address: 10.1.0.2
@@ -30,7 +30,7 @@ services:
       retries: 20
     volumes:
     # Update this to match your local paths
-      - /home/your_username/code/pytldr-oss/dse/6.8.37:/var/lib/cassandra
+      - /home/ai/code/pytldr-oss/dse/6.8.37:/var/lib/cassandra
     networks:
       backend:
         ipv4_address: 10.1.0.3
@@ -55,9 +55,9 @@ services:
     command: ["gradio", "app.py", "--demo-name=demo"]
     volumes:
     # Update this to match your local paths
-      - /home/your_username/code/pytldr-oss:/pytldr
-      - /home/your_username/code/llama.cpp/models:/usr/share/models
-      - /home/your_username/.cache/huggingface:/root/.cache/huggingface
+      - /home/ai/code/pytldr-oss:/pytldr
+      - /home/ai/code/llama.cpp/models:/usr/share/models
+      - /home/ai/.cache/huggingface:/root/.cache/huggingface
     ports:
       - 7860:7860
     networks:
