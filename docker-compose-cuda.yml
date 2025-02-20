@@ -52,9 +52,10 @@ services:
               capabilities: [gpu]
     environment:
       GRADIO_SERVER_NAME: "0.0.0.0"
-    working_dir: /
+    working_dir: /app
     command: ["gradio", "app.py", "--demo-name=demo"]
     volumes:
+     # - ./:/app
       - /home/ai/code/pytldr-oss:/pytldr
       - /home/ai/code/llama.cpp/models:/usr/share/models
       - /home/ai/.cache/huggingface:/root/.cache/huggingface
