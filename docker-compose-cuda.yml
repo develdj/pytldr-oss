@@ -1,7 +1,8 @@
 services:
 
   vector_db:
-    image: cr.dtsx.io/datastax/dse-server:7.0.0-alpha.4
+    #image: cr.dtsx.io/datastax/dse-server:7.0.0-alpha.4
+    image: cassandra:4.1
     platform: linux/arm64/v8
     container_name: dse7
     environment:
@@ -18,7 +19,8 @@ services:
         ipv4_address: 10.1.0.2
 
   search_db:
-    image: cr.dtsx.io/datastax/dse-server:6.8.37
+    #image: cr.dtsx.io/datastax/dse-server:6.8.37
+    image: cassandra:4.1
     platform: linux/arm64/v8
     container_name: dse68
     command: ["-s"]
