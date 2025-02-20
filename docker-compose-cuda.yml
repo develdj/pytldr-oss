@@ -37,8 +37,9 @@ services:
     
   server:
     build:
-    context: .
-    dockerfile: pytldr-cuda.dockerfile
+      context: .
+      dockerfile: pytldr-cuda.dockerfile
+  platform: linux/arm64 
     platform: linux/arm64 
     image: pytldr
     deploy:
