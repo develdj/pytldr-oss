@@ -55,7 +55,7 @@ services:
     working_dir: /app
     command: ["gradio", "app.py", "--demo-name=demo"]
     volumes:
-     # - ./:/app
+      - ./:/app
       - /home/ai/code/pytldr-oss:/pytldr
       - /home/ai/code/llama.cpp/models:/usr/share/models
       - /home/ai/.cache/huggingface:/root/.cache/huggingface
