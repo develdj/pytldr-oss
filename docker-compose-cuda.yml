@@ -11,7 +11,6 @@ services:
       timeout: 10s
       retries: 20
     volumes:
-    # Update this to match your local paths
       - /home/ai/code/pytldr-oss/dse/7.0.0-alpha.4:/var/lib/cassandra
     networks:
       backend:
@@ -29,18 +28,16 @@ services:
       timeout: 10s
       retries: 20
     volumes:
-    # Update this to match your local paths
       - /home/ai/code/pytldr-oss/dse/6.8.37:/var/lib/cassandra
     networks:
       backend:
         ipv4_address: 10.1.0.3
-    
+
   server:
     build:
       context: .
       dockerfile: pytldr-cuda.dockerfile
-  platform: linux/arm64 
-    platform: linux/arm64 
+    platform: linux/arm64
     image: pytldr
     deploy:
       resources:
@@ -54,7 +51,6 @@ services:
     working_dir: /pytldr
     command: ["gradio", "app.py", "--demo-name=demo"]
     volumes:
-    # Update this to match your local paths
       - /home/ai/code/pytldr-oss:/pytldr
       - /home/ai/code/llama.cpp/models:/usr/share/models
       - /home/ai/.cache/huggingface:/root/.cache/huggingface
