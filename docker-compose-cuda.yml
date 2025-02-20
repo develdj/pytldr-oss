@@ -52,7 +52,7 @@ services:
               capabilities: [gpu]
     environment:
       GRADIO_SERVER_NAME: "0.0.0.0"
-    working_dir: /pytldr
+    working_dir: /
     command: ["gradio", "app.py", "--demo-name=demo"]
     volumes:
       - /home/ai/code/pytldr-oss:/pytldr
